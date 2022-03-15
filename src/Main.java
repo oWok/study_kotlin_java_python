@@ -3,8 +3,6 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] agrs) {
 
-
-
         // 삽입 정렬
         System.out.println("삽입정렬");
 
