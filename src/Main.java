@@ -3,10 +3,14 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] agrs) {
 
+
+
+        // 삽입 정렬
+        System.out.println("삽입정렬");
+
         int[] arr_num = randomNum();
         System.out.println(Arrays.toString(arr_num));
 
-        // 삽입 정렬
         for(int i=1;i<arr_num.length;i++) {
             int temp = arr_num[i];
             int prev = i-1;
@@ -15,28 +19,54 @@ public class Main {
                 prev--;
             }
             arr_num[prev+1] = temp;
+
+            System.out.println(i + " 회전 : " + Arrays.toString(arr_num));
         }
 
         System.out.println(Arrays.toString(arr_num));
 
+        //버블정렬
+        System.out.println("버블정렬");
+
         arr_num = randomNum();
         System.out.println(Arrays.toString(arr_num));
 
-        //버블정렬
         for(int i=1;i<arr_num.length-1;i++) {
             for(int j=0;j<arr_num.length-i;j++){
                 if(arr_num[j] > arr_num[j+1])
                     swap(arr_num,j,j+1);
             }
+            System.out.println(i + " 회전 : " + Arrays.toString(arr_num));
         }
 
         System.out.println(Arrays.toString(arr_num));
 
+        //선택 정렬
+        System.out.println("선택정렬");
+
+
         arr_num = randomNum();
         System.out.println(Arrays.toString(arr_num));
 
-        //선택 정렬
-//        for(int )
+        for(int i=0;i<arr_num.length-1;i++) {
+            int check = arr_num[i];
+            int check_turn = -1;
+
+            for(int j=i+1;j<arr_num.length;j++) {
+                if(check > arr_num[j]) {
+                    check = arr_num[j];
+                    check_turn = j;
+                }
+            }
+
+            if(check_turn != -1) {
+                swap(arr_num,i,check_turn);
+            }
+
+            System.out.println(i+1 + " 회전 : " + Arrays.toString(arr_num));
+        }
+
+        System.out.println(Arrays.toString(arr_num));
 
     }
 
